@@ -7,17 +7,26 @@ const resultText = document.querySelector("#result");
 const forms = document.querySelectorAll(".form");
 const refresh = document.querySelector("#refresh")
 
-calcButton.addEventListener("click", (event)=> {
-    event.preventDefault();
-    resultText.innerHTML = result + "%";
-    resultText.style.display = "block";
-    forms.forEach(element => {
-        element.style.display = "none";
-    });
-    subtitle.innerHTML = name1.value + " and " + name2.value + ", your compatibility is...";
-    refresh.style.display = "block";
+function isInvalid(input) {
+    return input.trim() === "" || /^\d+$/.test(input);
+}
+
+calcButton.addEventListener("click", (event) => {
+    if (isInvalid(name1.value) || isInvalid(name2.value)) {
+        alert("Please insert both names.");
+    } else {
+        event.preventDefault();
+        resultText.innerHTML = result + "%";
+        resultText.style.display = "block";
+        forms.forEach(element => {
+            element.style.display = "none";
+        });
+        subtitle.innerHTML = name1.value + " and " + name2.value + ", your compatibility is...";
+        refresh.style.display = "block";
+    }
+
 });
 
-refresh.addEventListener("click", ()=>{
+refresh.addEventListener("click", () => {
     location.reload();
 });
