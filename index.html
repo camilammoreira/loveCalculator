@@ -19,16 +19,19 @@
             <span>+</span>
             <input type="text" placeholder="Your lover's name" name="name2" id="name2" class="input-name">
 
-            <button id="calculate">Calculate</button>
+            <button type="submit" id="calculate">Calculate</button>
         </form>
 
-        <h2>Indecisive? Add and see which one you have more chance with:</h2>
-
-        <input type="text" placeholder="Your lover's name" name="name2" id="name3" class="input-name">
-        <button>+</button>
+        <h2 id="subtitle">Indecisive? Add and see which one you have more chance with:</h2>
+        <form id="addNameForm" class="form">
+            <input type="text" placeholder="Your lover's name" name="name2" id="name3" class="input-name">
+            <button>+</button>
+        </form>
 
         <h2 style="display: none;">Your compatibility is...</h2>
-        <p class="result" id="result">51%</p>
+        <p style="display: none;" class="result" id="result">51%</p>
+
+        <button id="refresh" style="display: none;">Try Again</button>
     </div>
 
     <footer>
@@ -37,7 +40,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script> -->
-        <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
