@@ -14,18 +14,23 @@
     <div class="container">
 
         <h1 class="flex-center">The <span>True</span> Love Calculator</h1>
+        <h2 id="subtitle">A reliable tool that will help you to decide your love life</h2>
+
         <form action="" class="form">
             <input type="text" placeholder="Your Name" name="name1" id="name1" class="input-name">
             <span>+</span>
-            <input type="text" placeholder="Your lover's name" name="name2" id="name2" class="input-name">
+            <div id="loverName">
+                <input type="text" placeholder="Your lover's name" name="name2" id="name2" class="input-name">
+                <span id="orSpan" style="display: none;">or...</span>
+            </div>
 
             <button type="submit" id="calculate">Calculate</button>
         </form>
 
-        <h2 id="subtitle">Indecisive? Add and see which one you have more chance with:</h2>
-        <form id="addNameForm" class="form">
-            <input type="text" placeholder="Your lover's name" name="name2" id="name3" class="input-name">
-            <button>+</button>
+        <form id="addNameForm" class="form addNameForm">
+            <h2>Indecisive? Add and see which one you have more chance with:</h2>
+            <!-- <input type="text" placeholder="Your lover's name" name="name2" id="name3" class="input-name"> -->
+            <button id="addName">Add a third option</button>
         </form>
 
         <h2 style="display: none;">Your compatibility is...</h2>

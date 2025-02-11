@@ -27,6 +27,28 @@ calcButton.addEventListener("click", (event) => {
 
 });
 
+let count = 2;
+const addNameButton = document.querySelector("#addName");
+
+addNameButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    addName();
+});
+
+function addName() {
+    const loverName = document.querySelector("#loverName");
+
+    const newName = document.createElement("input");
+    newName.setAttribute("class", "input-name");
+    newName.setAttribute("id", "name" + count++);
+    newName.setAttribute("placeholder", "Your other lover's name");
+
+    document.querySelector("#orSpan").style.display = "inline-block";
+
+    loverName.appendChild(newName);
+}
+
+
 refresh.addEventListener("click", () => {
     location.reload();
 });
