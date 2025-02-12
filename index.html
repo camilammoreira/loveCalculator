@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The True Love Calculator</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,15 +20,12 @@
             <div id="loverName">
                 <input type="text" placeholder="Your lover's name" name="name2" id="name2" class="input-name">
                 <span id="orSpan" style="display: none;">or...</span>
+                <input type="text" style="display: none;" placeholder="Your lover's name" name="name3" id="name3" class="input-name">
             </div>
-
-            <button type="submit" id="calculate">Calculate</button>
-        </form>
-
-        <form id="addNameForm" class="form addNameForm">
-            <h2>Indecisive? Add and see which one you have more chance with:</h2>
-            <!-- <input type="text" placeholder="Your lover's name" name="name2" id="name3" class="input-name"> -->
-            <button id="addName">Add a third option</button>
+            <div>
+                <button id="addName">Add name</button>
+                <button type="submit" id="calculate">Calculate</button>
+            </div>
         </form>
 
         <h2 style="display: none;">Your compatibility is...</h2>
@@ -42,9 +37,6 @@
     <footer>
         <a href="https://github.com/camilammoreira" target="_blank">Camila Moreira &copy;</a>
     </footer>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script> -->
     <script src="index.js"></script>
 </body>
 

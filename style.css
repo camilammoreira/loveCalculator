@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 /* TODO:
-    - Definir largura fixa do Your Name
     - Colocar o footer preso no final da pagina (aula positions)
 */
 :root {
@@ -66,7 +65,7 @@ button {
     font-size: 1rem;
     color: #fff;
     background-color: #ffffff26;
-    box-shadow: 0px 0px 20px #770000;
+    box-shadow: 0px 0px 15px #580000;
     cursor: pointer;
 }
 
@@ -74,6 +73,12 @@ button:hover {
     background-color: #770000;
     color: #fff;
     transition: 100ms;
+}
+
+#addName {
+    background: #ab1010;
+    border: 1px solid #fff;
+    box-shadow: none;
 }
 
 #calculate {

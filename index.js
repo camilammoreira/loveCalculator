@@ -29,24 +29,35 @@ calcButton.addEventListener("click", (event) => {
 
 let count = 2;
 const addNameButton = document.querySelector("#addName");
+const orSpan = document.querySelector("#orSpan");
+const addNameInput = document.querySelector("#name3");
 
 addNameButton.addEventListener("click", (event) => {
     event.preventDefault();
-    addName();
+    if (orSpan.style.display === "none") {
+        orSpan.style.display = "inline-block";
+        addNameInput.style.display = "inline";
+        addNameButton.innerHTML = "Remove Name";
+    } else {
+        orSpan.style.display = "none";
+        addNameInput.style.display = "none";
+        addNameInput.value = "";
+        addNameButton.innerHTML = "Add Name";
+    }
 });
 
-function addName() {
-    const loverName = document.querySelector("#loverName");
+// function addName() {
+//     const loverName = document.querySelector("#loverName");
 
-    const newName = document.createElement("input");
-    newName.setAttribute("class", "input-name");
-    newName.setAttribute("id", "name" + count++);
-    newName.setAttribute("placeholder", "Your other lover's name");
+//     const newName = document.createElement("input");
+//     newName.setAttribute("class", "input-name");
+//     newName.setAttribute("id", "name" + count++);
+//     newName.setAttribute("placeholder", "Your other lover's name");
 
-    document.querySelector("#orSpan").style.display = "inline-block";
+//     document.querySelector("#orSpan").style.display = "inline-block";
 
-    loverName.appendChild(newName);
-}
+//     loverName.appendChild(newName);
+// };
 
 
 refresh.addEventListener("click", () => {
