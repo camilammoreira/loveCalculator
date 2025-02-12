@@ -98,9 +98,18 @@ button:hover {
     margin-bottom: 1rem;
 }
 
+.result-container {
+    margin-bottom: 2rem;
+}
+
 .result {
     font-size: 3rem;
     font-weight: 700;
+}
+
+.result-container-text {
+    text-align: center;
+    margin: 0 1.5rem;
 }
 
 footer a {

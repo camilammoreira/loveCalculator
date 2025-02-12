@@ -1,41 +1,60 @@
-let result = Math.floor(Math.random() * 101);
+const result1 = Math.floor(Math.random() * 101);
+const result2 = Math.floor(Math.random() * 101);
 const subtitle = document.querySelector("#subtitle");
 const name1 = document.querySelector("#name1");
 const name2 = document.querySelector("#name2");
 const name3 = document.querySelector("#name3");
 const calcButton = document.querySelector("#calculate");
-const resultText = document.querySelector("#result");
-const forms = document.querySelectorAll(".form");
-const refresh = document.querySelector("#refresh")
+const resultText1 = document.querySelector("#result1");
+const resultText2 = document.querySelector("#result2");
+const resultTextName1 = document.querySelector("#result-name-lover1");
+const resultTextName2 = document.querySelector("#result-name-lover2");
+const resultContainer = document.querySelector(".result-container");
+const form = document.querySelector(".form");
+const refreshButton = document.querySelector("#refresh");
+
 function isInvalid(input) {
     return input.trim() === "" || /^\d+$/.test(input);
-}
+};
 
 calcButton.addEventListener("click", (event) => {
     if (name3.style.display === "none") {
         if (isInvalid(name1.value) || isInvalid(name2.value)) {
-            alert("Please insert both names.");
+            alert("Please insert valid names.");
         } else {
-            calculate();
+            calculate(false);
         };
     } else {
         if (isInvalid(name1.value) || isInvalid(name2.value) || isInvalid(name3.value)) {
-            alert("Please insert both names.");
+            alert("Please insert valid names.");
         } else {
-            calculate();
+            calculate(true);
         };
     };
 });
 
-function calculate() {
+function calculate(thirdName) {
     event.preventDefault();
-    resultText.innerHTML = result + "%";
-    resultText.style.display = "block";
-    forms.forEach(element => {
-        element.style.display = "none";
-    });
-    subtitle.innerHTML = name1.value + " and " + name2.value + ", your compatibility is...";
-    refresh.style.display = "block";
+    form.style.display = "none";
+    subtitle.innerHTML = name1.value + ", your compatibility is...";
+
+    resultText1.innerHTML = result1 + "%";
+    resultText1.style.display = "block";
+
+    resultTextName1.innerHTML = "with " + name2.value;
+    resultTextName1.style.display = "block";
+
+    refreshButton.style.display = "block";
+
+    if (thirdName) {
+        resultText2.innerHTML = result2 + "%";
+        resultText2.style.display = "block";
+
+        resultTextName2.innerHTML = "with " + name3.value;
+        resultTextName2.style.display = "block";
+
+        resultContainer.style.display = "flex";
+    }
 };
 
 let count = 2;
@@ -71,6 +90,6 @@ addNameButton.addEventListener("click", (event) => {
 // };
 
 
-refresh.addEventListener("click", () => {
+refreshButton.addEventListener("click", () => {
     location.reload();
 });
