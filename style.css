@@ -105,6 +105,8 @@ button:hover {
 
 .result-container {
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .result {
@@ -115,6 +117,10 @@ button:hover {
 .result-container-text {
     text-align: center;
     margin: 0 1.5rem;
+}
+
+.result-name-lover {
+    word-break: break-word;
 }
 
 footer a {

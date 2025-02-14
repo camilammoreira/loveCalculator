@@ -9,7 +9,7 @@ const resultText1 = document.querySelector("#result1");
 const resultText2 = document.querySelector("#result2");
 const resultTextName1 = document.querySelector("#result-name-lover1");
 const resultTextName2 = document.querySelector("#result-name-lover2");
-const resultContainer = document.querySelector(".result-container");
+const resultContainerText2 = document.querySelector("#resultContainerText2");
 const form = document.querySelector(".form");
 const refreshButton = document.querySelector("#refresh");
 
@@ -49,11 +49,10 @@ function calculate(thirdName) {
     if (thirdName) {
         resultText2.innerHTML = result2 + "%";
         resultText2.style.display = "block";
+        resultContainerText2.style.display = "block";
 
         resultTextName2.innerHTML = "with " + name3.value;
         resultTextName2.style.display = "block";
-
-        resultContainer.style.display = "flex";
     }
 };
 
