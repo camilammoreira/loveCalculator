@@ -123,6 +123,10 @@ button:hover {
     word-break: break-word;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 footer a {
     color: #fff;
     text-underline-offset: .3rem;

@@ -15,12 +15,12 @@
         <h2 id="subtitle">A reliable tool that will help you to decide your love life</h2>
 
         <form action="" class="form">
-            <input type="text" placeholder="Your Name" name="name1" id="name1" class="input-name">
+            <input type="text" placeholder="Your name" name="name1" id="name1" class="input-name">
             <span>+</span>
             <div class="lover-names" id="loverName">
                 <input type="text" placeholder="Your lover's name" name="name2" id="name2" class="input-name">
                 <span id="orSpan" style="display: none;">or...</span>
-                <input type="text" style="display: none;" placeholder="Your lover's name" name="name3" id="name3"
+                <input type="text" style="display: none;" placeholder="Your other lover's name" name="name3" id="name3"
                     class="input-name">
             </div>
             <div>
@@ -33,10 +33,12 @@
         <div class="result-container">
             <div class="result-container-text">
                 <p style="display: none;" class="result" id="result1">51%</p>
-                <p class="result-name-lover" id="result-name-lover1"></p>
+                <p>
+                <span class="result-name-lover capitalize" id="result-name-lover1"></span>
+                </p>
             </div>
             <div class="result-container-text" id="resultContainerText2" style="display: none;">
-                <p  class="result" id="result2">51%</p>
+                <p class="result" id="result2">51%</p>
                 <p class="result-name-lover" id="result-name-lover2"></p>
             </div>
         </div>

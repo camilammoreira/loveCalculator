@@ -33,16 +33,29 @@ calcButton.addEventListener("click", (event) => {
     };
 });
 
+function capitalize(string) {
+    const words = string.split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length > 3){
+            
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        }
+    }
+
+    return words.join(" ");
+}
+
 function calculate(thirdName) {
     event.preventDefault();
     form.style.display = "none";
-    subtitle.innerHTML = name1.value + ", your compatibility is...";
+    subtitle.innerHTML = capitalize(name1.value) + ", your compatibility is...";
 
     resultText1.innerHTML = result1 + "%";
     resultText1.style.display = "block";
 
-    resultTextName1.innerHTML = "with " + name2.value;
-    resultTextName1.style.display = "block";
+    resultTextName1.innerHTML = "with " + capitalize(name2.value);
+    resultTextName1.style.display = "inline";//
 
     refreshButton.style.display = "block";
 
@@ -51,7 +64,7 @@ function calculate(thirdName) {
         resultText2.style.display = "block";
         resultContainerText2.style.display = "block";
 
-        resultTextName2.innerHTML = "with " + name3.value;
+        resultTextName2.innerHTML = "with " + capitalize(name3.value);
         resultTextName2.style.display = "block";
     }
 };
