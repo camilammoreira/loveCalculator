@@ -107,11 +107,22 @@ button:hover {
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .result {
     font-size: 3rem;
     font-weight: 700;
+}
+
+.best-match {
+    color: #ab1010;
+    padding: 2.5rem;
+    background-image: url(heart.svg);
+    background-position: center;
+    background-position-y: 6px;
+    background-repeat: no-repeat;
+    object-fit: cover;
 }
 
 .result-container-text {

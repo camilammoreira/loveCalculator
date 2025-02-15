@@ -22,7 +22,7 @@ function capitalize(string) {
     const words = string.split(" ");
 
     for (let i = 0; i < words.length; i++) {
-        if (!prefixes.includes(words[i])) {
+        if (!prefixes.includes(words[i]) || i === 0) {
             words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
         };
     }
@@ -50,6 +50,12 @@ function calculate(thirdName) {
 
         resultTextName2.innerHTML = "with " + capitalize(name3.value);
         resultTextName2.style.display = "block";
+    }
+
+    if (thirdName && result1 < result2) {
+        resultText2.classList.add("best-match");
+    } else {
+        resultText1.classList.add("best-match");
     }
 };
 
