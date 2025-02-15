@@ -17,30 +17,14 @@ function isInvalid(input) {
     return input.trim() === "" || /^\d+$/.test(input);
 };
 
-calcButton.addEventListener("click", (event) => {
-    if (name3.style.display === "none") {
-        if (isInvalid(name1.value) || isInvalid(name2.value)) {
-            alert("Please insert valid names.");
-        } else {
-            calculate(false);
-        };
-    } else {
-        if (isInvalid(name1.value) || isInvalid(name2.value) || isInvalid(name3.value)) {
-            alert("Please insert valid names.");
-        } else {
-            calculate(true);
-        };
-    };
-});
-
 function capitalize(string) {
+    const prefixes = ["de", "da", "das", "do", "dos", "van", "von", "del", "di", "du", "la", "le"];
     const words = string.split(" ");
 
     for (let i = 0; i < words.length; i++) {
-        if (words[i].length > 3){
-            
-        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-        }
+        if (!prefixes.includes(words[i])) {
+            words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
+        };
     }
 
     return words.join(" ");
@@ -69,6 +53,22 @@ function calculate(thirdName) {
     }
 };
 
+calcButton.addEventListener("click", (event) => {
+    if (name3.style.display === "none") {
+        if (isInvalid(name1.value) || isInvalid(name2.value)) {
+            alert("Please insert valid names.");
+        } else {
+            calculate(false);
+        };
+    } else {
+        if (isInvalid(name1.value) || isInvalid(name2.value) || isInvalid(name3.value)) {
+            alert("Please insert valid names.");
+        } else {
+            calculate(true);
+        };
+    };
+});
+
 let count = 2;
 const addNameButton = document.querySelector("#addName");
 const orSpan = document.querySelector("#orSpan");
@@ -87,20 +87,6 @@ addNameButton.addEventListener("click", (event) => {
         addNameButton.innerHTML = "Add Name";
     }
 });
-
-// function addName() {
-//     const loverName = document.querySelector("#loverName");
-
-//     const newName = document.createElement("input");
-//     newName.setAttribute("class", "input-name");
-//     newName.setAttribute("id", "name" + count++);
-//     newName.setAttribute("placeholder", "Your other lover's name");
-
-//     document.querySelector("#orSpan").style.display = "inline-block";
-
-//     loverName.appendChild(newName);
-// };
-
 
 refreshButton.addEventListener("click", () => {
     location.reload();
