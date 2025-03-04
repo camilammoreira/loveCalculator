@@ -4,7 +4,8 @@ const subtitle = document.querySelector("#subtitle");
 const name1 = document.querySelector("#name1");
 const name2 = document.querySelector("#name2");
 const name3 = document.querySelector("#name3");
-const calcButton = document.querySelector("#calculate");
+namesInputs = [name1, name2, name3];
+const invalidMsg = document.querySelector("#invalid-msg");
 const resultText1 = document.querySelector("#result1");
 const resultText2 = document.querySelector("#result2");
 const resultTextName1 = document.querySelector("#result-name-lover1");
@@ -14,7 +15,7 @@ const form = document.querySelector(".form");
 const refreshButton = document.querySelector("#refresh");
 
 function isInvalid(input) {
-    return input.trim() === "" || /^\d+$/.test(input);
+    return input.trim() === "" || /\d+/.test(input);
 };
 
 function capitalize(string) {
@@ -59,7 +60,7 @@ function calculate(thirdName) {
     }
 };
 
-calcButton.addEventListener("click", (event) => {
+form.addEventListener("submit", () => {
     if (name3.style.display === "none") {
         if (isInvalid(name1.value) || isInvalid(name2.value)) {
             alert("Please insert valid names.");
@@ -75,10 +76,21 @@ calcButton.addEventListener("click", (event) => {
     };
 });
 
+namesInputs.forEach(element => {
+    element.addEventListener("keyup", () => {
+        if (isInvalid(element.value)) {
+            element.classList.add("invalid");
+            invalidMsg.style.display = "block";
+        } else {
+            element.classList.remove("invalid");
+            invalidMsg.style.display = "none";
+        }
+    });
+});
+
 let count = 2;
 const addNameButton = document.querySelector("#addName");
 const orSpan = document.querySelector("#orSpan");
-
 
 addNameButton.addEventListener("click", (event) => {
     event.preventDefault();
