@@ -20,7 +20,8 @@ function isInvalid(input) {
 
 function capitalize(string) {
     const prefixes = ["de", "da", "das", "do", "dos", "van", "von", "del", "di", "du", "la", "le"];
-    const words = string.split(" ");
+    const trimmedString = string.trim();
+    const words = trimmedString.split(" ");
 
     for (let i = 0; i < words.length; i++) {
         if (!prefixes.includes(words[i]) || i === 0) {
