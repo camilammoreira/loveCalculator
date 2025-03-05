@@ -33,21 +33,17 @@ function capitalize(string) {
 }
 
 function calculate(thirdName) {
-    event.preventDefault();
     form.style.display = "none";
     subtitle.innerHTML = capitalize(name1.value) + ", your compatibility is...";
 
-    resultText1.innerHTML = result1 + "%";
-    resultText1.style.display = "block";
+    animateResult(resultText1, result1);
 
     resultTextName1.innerHTML = "with " + capitalize(name2.value);
-    resultTextName1.style.display = "inline";//
-
-    refreshButton.style.display = "block";
+    resultTextName1.style.display = "inline";
 
     if (thirdName) {
-        resultText2.innerHTML = result2 + "%";
-        resultText2.style.display = "block";
+        animateResult(resultText2, result2);
+
         resultContainerText2.style.display = "block";
 
         resultTextName2.innerHTML = "with " + capitalize(name3.value);
@@ -59,9 +55,27 @@ function calculate(thirdName) {
     } else {
         resultText1.classList.add("best-match");
     }
+
+    refreshButton.style.display = "block";
 };
 
-form.addEventListener("submit", () => {
+function animateResult(text, result) {
+    text.style.display = "block";
+
+    let i = 0;
+    const animate = setInterval(() => {
+        text.innerHTML = `${i}%`;
+
+        if (i === result) {
+            animate.clearInterval();
+        }
+        i++;
+    }, 10);
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
     if (name3.style.display === "none") {
         if (isInvalid(name1.value) || isInvalid(name2.value)) {
             alert("Please insert valid names.");
